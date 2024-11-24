@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/mycss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+        <link rel="icon" href="./bookmark.png">
+        
+</head>
+
+<body>
+
+    <div class="upper container d-flex flex-column  align-items-center mt-5 ">
+
+
+        <h1 class="fst-italic d-flex mb-5"> BookMarker</h1>
+        <p class="mt-4 fs-5"> <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i
+                class="fa-solid fa-bookmark"></i> </p>
+        <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+            <div class="form-floating mb-3 w-100 mt-5 ">
+
+                <input type="text" class="form-control" id="SiteName" placeholder="Site Name" onkeyup="addingValidClassesForName(this.value)">
+                <label for="SiteName"><i class="fa-solid fa-book"></i> Site Name</label>
+            </div>
+            <div class="form-floating w-100 mt-4">
+                <input type="text" class="form-control" id="SiteLink" placeholder="text" onkeyup="addingValidClassesForUrl(this.value)">
+                <label for="SiteLink"><i class="fa-solid fa-link"></i> Site URL</label>
+                
+            </div>
+            <div id="primaryButton">
+
+                <button class="btn btn-danger mt-4 px-5" onclick="Additem()" > Submit</button>
+            </div>
+            <div class="input-group flex-nowrap mt-4">
+                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="addon-wrapping" onkeyup="SearchElement(this.value)">
+              </div>
+
+
+        </div>
+
+
+
+        <table class="table mt-5">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">index</th>
+                    <th scope="col">Website Name</th>
+                    <th scope="col">Visit</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col"> Update</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" id="tableBody">
+                
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
