@@ -1,14 +1,18 @@
-
 var siteNameInput = document.getElementById("SiteName");
 var siteURLinput = document.getElementById("SiteLink");
 var siteNameRegex = /^[a-z0-9]{3,}$/i; //regex el name input
 var siteURL_Regex = /^(https:\/\/)[a-z]{3,}(\.com)$/i; // regex el URL mslan -> https://google.com 
 
-var allBookmarks = []; //primary array
-allBookmarks = JSON.parse(localStorage.getItem('allBookmarks')); 
+var storedBookmarks = localStorage.getItem('allBookmarks');
+if (storedBookmarks) {
+    allBookmarks = JSON.parse(storedBookmarks);
+    displayItems();
+} else {
+    allBookmarks = []; 
+}
+
 
 // 3shan ye3red kol el fel storage b3 el refresh
-displayItems();
 
 function Additem() { // lama yetdas 3la el add button
 if(CheckIfSameName(siteNameInput.value)==1){
